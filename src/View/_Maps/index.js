@@ -5,7 +5,7 @@ import {
 } from 'react-native';
 import Map from '../../Component/Map';
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
-export default class Setting extends Component {
+export default class _Maps extends Component {
     render() {
         return (
             <View style={{ flex: 1 }}>

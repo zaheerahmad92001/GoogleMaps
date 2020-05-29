@@ -5,7 +5,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import Splash from '../src/View/splash';
 import Landing from '../src/View/Landing';
-import Setting from '../src/View/Setting';
+import _Maps from './View/_Maps';
 import {Text, View,StyleSheet}from 'react-native'
 import { RFValue } from 'react-native-responsive-fontsize';
 import { Green, light_Black } from './Colors';
@@ -19,7 +19,7 @@ const SplashNavigator = createStackNavigator({
 
 const TabNavigator = createBottomTabNavigator({
     Landing: Landing,
-    Setting:Setting
+    _Maps:_Maps
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
@@ -31,7 +31,7 @@ const TabNavigator = createBottomTabNavigator({
           iconName = focused
             ? 'md-alarm'
             : 'md-alarm';
-        } else if (routeName === 'Setting') {
+        } else if (routeName === '_Maps') {
           iconName = focused ? 'md-settings' : 'md-settings';
         }
 
@@ -39,8 +39,8 @@ const TabNavigator = createBottomTabNavigator({
         return focused ?(<View>
          <IconComponent name={iconName} size={25} color={tintColor} />
           {routeName==='Landing'?
-        <Text style={styles.textStyle}>Home</Text>:routeName==='Setting'?
-        <Text style={styles.textStyle}>Setting</Text>:null  
+        <Text style={styles.textStyle}>Home</Text>:routeName==='_Maps'?
+        <Text style={styles.textStyle}>Loacation</Text>:null  
         }
          </View>):
          <IconComponent name={iconName} size={25} color={tintColor} />;
